@@ -1,0 +1,104 @@
+[
+  {
+    "title": "<div class='fw-bold text-uppercase text-lg text-dark mb-3'>Sell<span class='text-primary'>.</span></div>",
+    "logo": true,
+    "content": "Garments that are made to Impress",
+    "social": [
+      {
+        "title": "twitter",
+        "link": "#"
+      },
+      {
+        "title": "facebook",
+        "link": "#"
+      },
+      {
+        "title": "instagram",
+        "link": "#"
+      },
+      {
+        "title": "pinterest",
+        "link": "#"
+      },
+      {
+        "title": "vimeo",
+        "link": "#"
+      }
+    ],
+    "lg": "4"
+  },
+  {
+    "title": "Products",
+    "links": [
+      {
+        "title": "For Women",
+        "link": "/explore?collection=Women"
+      },
+      {
+        "title": "For Men",
+        "link": "/explore?collection=Men"
+      },
+      {
+        "title": "Bedsheets",
+        "link": "//explore?page=1&category=bedsheets"
+      },
+      {
+        "title": "Nursing & Other",
+        "link": "/explore?page=1&category=nursing-and-other"
+      },
+      {
+        "title": "Explore All",
+        "link": "/explore"
+      }
+    ],
+    "lg": "2",
+    "md": "6"
+  },
+
+  {
+    "title": "Get in Touch",
+    "links": [
+      {
+        "title": "About Us",
+        "link": "/about"
+      },
+      {
+        "title": "Contact Us",
+        "link": "/contact"
+      },
+      {
+        "title": "FAQs",
+        "link": "/faq"
+      },
+      {
+        "title": "Bulk Orders",
+        "link": "/page?slug=bulk-order"
+      }
+    ],
+    "lg": "2",
+    "md": "6"
+  },
+  {
+    "title": "Company",
+    "links": [
+      {
+        "title": "Terms & Conditions",
+        "link": "/page?slug=terms-and-conditions"
+      },
+      {
+        "title": "Privacy Policy",
+        "link": "/page?slug=privacy-policy"
+      },
+      {
+        "title": "Shipping Policy",
+        "link": "/page?slug=shipping"
+      },
+      {
+        "title": "Returns and Exchange",
+        "link": "/page?slug=returns"
+      }
+    ],
+    "lg": "2",
+    "md": "6"
+  }
+]

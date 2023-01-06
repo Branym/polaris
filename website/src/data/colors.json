@@ -1,0 +1,82 @@
+[
+    {
+      "color": "Wine",
+      "hex": "#AC417A"
+    },
+    {
+        "color": "Black",
+        "hex": "#313131"
+      },
+      {
+        "color": "Dark Grey",
+        "hex": "#444559"
+      },
+    {
+        "color": "Blue",
+        "hex": "#0d5be1"
+    },
+    {
+        "color": "White",
+        "hex": "#f5f5f4"
+      },
+      {
+        "color": "Lilac",
+        "hex": "#d7bdda"
+      },
+      {
+        "color": "Maroon",
+        "hex": "#7a171b"
+      },
+      {
+        "color": "Green",
+        "hex": "#1c2f32"
+      },
+    {
+      "color": "Teal Blue",
+      "hex": "#567588"
+    },
+   
+    {
+      "color": "Royal Blue",
+      "hex": "#4169e1"
+    },
+
+   
+    {
+      "color": "Ocean Blue",
+      "hex": "#6f9cdc"
+    },
+    {
+      "color": "Navy Blue",
+      "hex": "#2f2e4e"
+    },
+    {
+      "color": "Light Blue",
+      "hex": "#739fe1"
+  },
+    {
+      "color": "Mint Green",
+      "hex": "#3eb489"
+    },
+    {
+      "color": "Dusty Pink",
+      "hex": "#c47b93"
+    },
+   
+    {
+      "color": "Light Olive",
+      "hex": "#95a391"
+    },
+    {
+      "color": "Hot Pink",
+      "hex": "#e84653"
+    },
+    {
+        "color": "Baby Pink",
+        "hex": "#ff007f"
+      },
+      {
+        "color": "Beige Lycra",
+        "hex": "#bfb1ac"
+      }
+  ]

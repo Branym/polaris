@@ -1,0 +1,51 @@
+{
+  "title": "F.A.Q.s",
+  "subtitle": "Frequently asked questions",
+  "breadcrumbs": [
+    {
+      "name": "Home",
+      "link": "/"
+    },
+    {
+      "name": "Frequently asked questions",
+      "active": true
+    }
+  ],
+  "content": "<p class='lead'></p>",
+  "questionGroups": [
+    {
+      "title": "Shipping",
+      "questions": [
+        {
+          "title": "Do you ship overseas",
+          "content": "No, but we are planning to initialize it very soon ww will ship all over the world; there will be an additional INR 1500 shipping fee."
+        },
+        {
+          "title": "What countries do you to?",
+          "content": "All non personalised orders will take upto 7 business days. If your order is personalised then it can take up to 14 business days."
+        },
+        {
+          "title": "What shipping carriers do you use?",
+          "content": "We work with all major carriers nationally and internationally. Our goal is to get your apparel to you as fast as possible!"
+        },
+        {
+          "title": "Where can I find my order number?",
+          "content": "Your order number is listed on your order confirmation, sent by Polaris Medfabrics. Check your spam or junk folder if you did not receive them. Feel free to reach out to support@polarismedfabrics.com if you are not able to find it."
+        }
+      ]
+    },
+    {
+      "title": "Returns & Exchnages",
+      "questions": [
+        {
+          "title": "Can I return my product?",
+          "content": "Returns/exchanges are only accepted within 7 days of delivery for non-personalized products. Please note, there will be no exchange for personalized products."
+        },
+        {
+          "title": "Can I get my product personilzed?",
+          "content": "Yes, you of course. We accept personalized embroidery for an extra charge of INR 250 - 500."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Delivery method",
+    "buttons": true,
+    "step": 2,
+    "inputs": [{
+            "label": "Usps next day",
+            "text": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections",
+            "name": "shipping",
+            "id": "option0",
+            "type": "radio",
+            "price": 10
+        },
+        {
+            "label": "DHL",
+            "text": "Get it right on next day - fastest option possible.",
+            "name": "shipping",
+            "id": "option1",
+            "type": "radio",
+            "price": 15
+        },
+        {
+            "label": "PPL",
+            "text": "Get it right on next day - fastest option possible.",
+            "name": "shipping",
+            "id": "option2",
+            "type": "radio",
+            "price": 8
+        },
+        {
+            "label": "UPS",
+            "text": "Get it right on next day - fastest option possible.",
+            "name": "shipping",
+            "id": "option3",
+            "type": "radio",
+            "price": 20
+        }
+    ]
+}

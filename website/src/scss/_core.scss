@@ -1,0 +1,24 @@
+// functions.scss - Bootstrap functions
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// your variables + overrides of Bootstrap variables 
+@import "user/user-variables"; 
+
+// custom variables + overrides of Bootstrap variables for this theme
+@import "custom/variables";
+@import "custom/utilities";
+
+// bootstrap main
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// theme components
+@import "custom/theme";
+
+// your components
+@import "user/user"; 
+
+body{
+    overflow-x: hidden;
+}
+

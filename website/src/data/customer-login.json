@@ -1,0 +1,13 @@
+{
+    "title": "Customer - Login",
+    "subtitle": "Customer Zone",
+    "breadcrumbs": [{
+            "name": "Home",
+            "link": "/"
+        },
+        {
+            "name": "Customer Zone",
+            "active": true
+        }
+    ]
+}

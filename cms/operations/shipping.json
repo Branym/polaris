@@ -1,0 +1,200 @@
+[
+    {
+        "title": "Create A Zone",
+        "name": "create_zone",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "type",
+                "required": true,
+                "type": "text",
+                "rules": {
+                   "options": ["Fixed", "Per KG"]
+                }
+            },
+            {
+                "name": "slug",
+                "constant": true,
+                "value": "{{total}}-{{hyphenize data.title}}"
+            },
+            {
+                "name": "description",
+                "type": "object"
+            },
+            {
+                "name": "countries",
+                "type": "list",
+                "required": true
+            },
+            {
+                "name": "rate",
+                "type": "object",
+                "required": true
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Update A Zone",
+        "name": "update_zone",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "title",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "description",
+                "type": "object"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "rules": {
+                   "options": ["Fixed", "Per KG"]
+                }
+            },
+            {
+                "name": "countries",
+                "type": "list"
+            },
+            {
+                "name": "rate",
+                "type": "object"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Get Shipping Zones",
+        "name": "get_all",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "title",
+                "type": "search",
+                "rules": {
+                    "options": "i"
+                }
+            }
+        ],
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1,
+                "type": 1,
+                "countries": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get Shipping Zones",
+        "name": "get_available",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "countries",
+                "type": "search",
+                "rules": {
+                    "options": "i"
+                }
+            }
+        ],
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1,
+                "type": 1,
+                "rate": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Zone",
+        "name": "get_one",
+        "type": "READ_ONE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1,
+                "type": 1,
+                "description": 1,
+                "rate": 1,
+                "countries": 1
+            }
+        }
+    },
+    {
+        "name": "delete",
+        "title": "Delete A Zone",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "name", 
+                "type": "slug",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    }
+]

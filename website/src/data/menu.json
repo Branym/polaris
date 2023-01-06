@@ -1,0 +1,165 @@
+[
+  {
+    "title": "Home",
+    "link": "/"
+  }, 
+  {
+    "title": "Men",
+    "position": "static",
+    "megamenu": [
+      [
+        {
+          "title": "Aprons",
+          "links": [
+            {
+              "title": "Basic Male Apron",
+              "link": "/product/[slug]",
+              "as": "/product/basic-male-apron"
+            },
+            {
+              "title": "Dental Lab Coat Male Apron",
+              "link": "/product/[slug]",
+              "as": "/product/dental-lab-coat-male-apron"
+            },
+            {
+              "title": "Long Male Apron",
+              "link": "/product/[slug]",
+              "as": "/product/long-male-apron"
+            },
+            {
+              "title": "Short Male Apron",
+              "link": "/product/[slug]",
+              "as": "/product/short-male-apron"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Scrubs",
+          "links": [
+            {
+              "title": "Overlapping Male Scrub",
+              "link": "/product/[slug]",
+              "as": "/product/overlapping-male-scrub"
+            },
+            {
+              "title": "V Neck Male Scrub",
+              "link": "/product/[slug]",
+              "as": "/product/v-neck-male-scrub"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Patient",
+          "links": [
+            {
+              "title": "Male Dress For Patient",
+              "link": "/product/[slug]",
+              "as": "/product/male-dress-for-patient"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Nursing",
+          "links": [
+            {
+              "title": "OT Gown Male Nursing",
+              "link": "/product/[slug]",
+              "as": "/product/ot-gown-male-nursing"
+            }
+          ]
+        }
+      ]
+    ],
+    "image": "/images/men.jpg"
+  },
+  {
+    "title": "Women",
+    "position": "static",
+    "megamenu": [
+      [
+        {
+          "title": "Aprons",
+          "links": [
+            {
+              "title": " Basic Female Apron",
+              "link": "/product/[slug]",
+              "as": "/product/-basic-female-apron"
+            },
+            {
+              "title": "Dental Lab Coat Female Apron",
+              "link": "/product/[slug]",
+              "as": "/product/dental-lab-coat-female-apron"
+            },
+            {
+              "title": "Long Female Apron",
+              "link": "/product/[slug]",
+              "as": "/product/long-female-apron"
+            },
+            {
+              "title": "Short Female Apron",
+              "link": "/product/[slug]",
+              "as": "/product/short-female-apron"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Scrubs",
+          "links": [
+            {
+              "title": "Overlapping Female Scrub",
+              "link": "/product/[slug]",
+              "as": "/product/overlapping-female-scrub"
+            },
+            {
+              "title": "Stand Collar Female Scrub",
+              "link": "/product/[slug]",
+              "as": "/product/stand-collar-female-scrub"
+            },
+            {
+              "title": "V Neck Female Scrub",
+              "link": "/product/[slug]",
+              "as": "/product/v-neck-female-scrub"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Patient",
+          "links": [
+            {
+              "title": "Female Dress For Patient",
+              "link": "/product/[slug]",
+              "as": "/product/female-dress-for-patient"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "Nursing",
+          "links": [
+            {
+              "title": "OT Gown Female Nursing",
+              "link": "/product/[slug]",
+              "as": "/product/ot-gown-female-nursing"
+            }
+          ]
+        }
+      ]
+    ],
+    "image": "/images/women.jpg"
+  },
+  {
+    "title": "About Us",
+    "link": "/about"
+  }
+]

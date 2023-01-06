@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Invoice address",
+        "title": true,
+        "titleclass": "mb-4",
+        "step": 1,
+        "inputs": [
+            {
+                "label": "Address Line 1",
+                "name": "address_line_1",
+                "placeholder": "123 Main St.",
+                "type": "text"
+            },
+            {
+                "label": "Address Line 2",
+                "name": "address_line_2",
+                "placeholder": "123 Main St.",
+                "type": "text"
+            },
+            {
+                "label": "City",
+                "name": "city",
+                "placeholder": "City",
+                "type": "text"
+            },
+            {
+                "label": "ZIP",
+                "name": "pincode",
+                "placeholder": "Postal code",
+                "type": "text"
+            },
+            {
+                "label": "State",
+                "name": "state",
+                "placeholder": "State",
+                "type": "text"
+            },
+            {
+                "label": "Country",
+                "name": "country",
+                "placeholder": "Country",
+                "type": "text"
+            },
+            {
+                "label": "Use a different shipping address",
+                "name": "show-shipping-address",
+                "type": "checkbox",
+                "toggleshipping": true
+            }
+        ]
+    },
+    {
+        "name": "Shipping address",
+        "titleclass": "my-4",
+        "title": true,
+        "collapse": true,
+        "step": 1,
+        "inputs": [
+            {
+                "label": "Address Line 1",
+                "name": "shipping.address_line_1",
+                "placeholder": "123 Main St.",
+                "type": "text"
+            },
+            {
+                "label": "Address Line 2",
+                "name": "shipping.address_line_2",
+                "placeholder": "123 Main St.",
+                "type": "text"
+            },
+            {
+                "label": "City",
+                "name": "shipping.city",
+                "placeholder": "City",
+                "type": "text"
+            },
+            {
+                "label": "ZIP",
+                "name": "shipping.pincode",
+                "placeholder": "Postal code",
+                "type": "text"
+            },
+            {
+                "label": "State",
+                "name": "shipping.state",
+                "placeholder": "State",
+                "type": "text"
+            },
+            {
+                "label": "Country",
+                "name": "shipping.country",
+                "placeholder": "Country",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "Payment Method",
+        "accordion": false,
+        "step": 3,
+        "title": true,
+        "titleclass": "mb-4",
+        "inputs": [
+            {
+                "label": "Pay Online",
+                "name": "payment",
+                "id": "pay-online",
+                "type": "radio",
+                "text": "Pay Online using Credit/Debit Cart or Net Banking or Google Pay."
+            },
+            {
+                "label": "Pay on delivery",
+                "name": "payment",
+                "id": "pay-cod",
+                "type": "radio",
+                "text": "We also accept Cash on Delivery orders. You will be paying the total amount on delivery of your order."
+            }
+        ]
+       
+    }
+]

@@ -1,0 +1,284 @@
+[
+    {
+        "title": "Create A Discount",
+        "name": "create_discount",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "code",
+                "required": true,
+                "type": "text",
+                "unique": true,
+                "rules": {
+                    "pattern": ["^[A-Z0-9]+", "Code can only have capital letters and numbers"],
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "price",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "start_date",
+                "type": "date"
+            },
+            {
+                "name": "end_date",
+                "type": "date"
+            },
+            {
+                "name": "one_use_per_user",
+                "type": "boolean"
+            },
+            {
+                "name": "limit",
+                "type": "boolean"
+            },
+            {
+                "name": "limit_uses",
+                "type": "number",
+                "rules": {
+                    "min": 1,
+                    "max": 9999
+                }
+            },
+            {
+                "name": "type",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Percentage", "Fixed" ]
+                }
+            },
+            {
+                "name": "requirement",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Minimum Value", "Minimum Items" ]
+                }
+            },
+            {
+                "name": "minimum_items",
+                "type": "number",
+                "rules": {
+                    "min": 1,
+                    "max": 9999
+                }
+            },
+            {
+                "name": "minimum_value",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "availability",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Update A Discount",
+        "name": "update_discount",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "code",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 20
+                }
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "price",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "start_date",
+                "type": "date"
+            },
+            {
+                "name": "end_date",
+                "type": "date"
+            },
+            {
+                "name": "one_use_per_user",
+                "type": "boolean"
+            },
+            {
+                "name": "limit",
+                "type": "boolean"
+            },
+            {
+                "name": "limit_uses",
+                "type": "number",
+                "rules": {
+                    "min": 0,
+                    "max": 9999
+                }
+            },
+            {
+                "name": "type",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Percentage", "Fixed" ]
+                }
+            },
+            {
+                "name": "requirement",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Minimum Value", "Minimum Items" ]
+                }
+            },
+            {
+                "name": "minimum_items",
+                "type": "number",
+                "rules": {
+                    "min": 1,
+                    "max": 9999
+                }
+            },
+            {
+                "name": "minimum_value",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "availability",
+                "required": true,
+                "type": "object"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Get All Discounts",
+        "name": "get_all_discounts",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "code",
+                "type": "search",
+                "rules": {
+                    "options": "i"
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "code": 1,
+                "start_date": 1,
+                "end_date": 1,
+                "type": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Discount",
+        "name": "get_one_discount",
+        "type": "READ_ONE",
+        "query_validations": [
+            {
+                "name": "code",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 20
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "code": 1,
+                "price":1,
+                "start_date": 1,
+                "end_date": 1,
+                "type": 1,
+                "availability": 1,
+                "one_use_per_user": 1,
+                "limit_uses": 1,
+                "limit": 1,
+                "requirement": 1,
+                "minimum_value": 1,
+                "minimum_items": 1,
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "name": "delete_discount",
+        "title": "Delete A Discount",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "code", 
+                "type": "text"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    }
+]

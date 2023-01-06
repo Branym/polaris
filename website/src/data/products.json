@@ -1,0 +1,486 @@
+[{
+        "name": "White Tee",
+        "link": "/detail-1",
+        "slug": "white-tee",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/serrah-galos-494312-unsplash.jpg",
+                "alt": "White Tee"
+            }],
+            "masonry": [{
+                "img": "/img/product/serrah-galos-494312-unsplash-cropped.jpg",
+                "alt": "White Tee"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 32,
+        "stars": 3,
+        "new": true
+    },
+    {
+        "name": "Black blouse",
+        "link": "/detail-1",
+        "slug": "black-blouse",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/kyle-loftus-590881-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/kyle-loftus-590881-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 40,
+        "stars": 3
+    },
+    {
+        "name": "Short top",
+        "link": "/detail-1",
+        "slug": "short-top",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/averie-woodard-319832-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/averie-woodard-319832-unsplash-cropped.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 89,
+        "stars": 3
+    },
+    {
+        "name": "College jacket",
+        "link": "/detail-1",
+        "slug": "college-jacket",
+        "category": [{
+            "title": "Jackets",
+            "slug": "jackets"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/kyle-loftus-596319-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/kyle-loftus-596319-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 68,
+        "stars": 3,
+        "sale": true
+    },
+    {
+        "name": "Carrot-fit jeans",
+        "link": "/detail-1",
+        "slug": "carrot-fit-jeans",
+        "category": [{
+            "title": "Jeans",
+            "slug": "jeans"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/ethan-haddox-484912-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/ethan-haddox-484912-unsplash-cropped.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 25,
+        "stars": 3
+    },
+    {
+        "name": "Striped T-Shirt",
+        "link": "/detail-1",
+        "slug": "striped-t-shirt",
+        "category": [{
+            "title": "Shirts",
+            "slug": "shirts"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/serrah-galos-494231-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/serrah-galos-494231-unsplash-cropped.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 33,
+        "stars": 3
+    },
+    {
+        "name": "College jacket",
+        "link": "/detail-1",
+        "slug": "college-jacket",
+        "category": [{
+            "title": "Jackets",
+            "slug": "jackets"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/kyle-loftus-596319-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/kyle-loftus-596319-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 68,
+        "stars": 3,
+        "sale": true
+    },
+    {
+        "name": "Ethnic Sweater",
+        "link": "/detail-1",
+        "slug": "ethnic-sweater",
+        "category": [{
+            "title": "Sweaters",
+            "slug": "sweaters"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/serrah-galos-494279-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/serrah-galos-494279-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 19,
+        "stars": 3,
+        "soldout": true
+    },
+    {
+        "name": "Beige",
+        "link": "/detail-1",
+        "slug": "beige",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/dmitriy-ilkevich-437760-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/dmitriy-ilkevich-437760-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 69,
+        "stars": 3
+    },
+    {
+        "name": "Skull Tee",
+        "link": "/detail-1",
+        "slug": "skull-tee",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/ian-dooley-347968-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/ian-dooley-347968-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 33,
+        "stars": 3
+    },
+    {
+        "name": "Trucker jacket",
+        "link": "/detail-1",
+        "slug": "trucker-jacket",
+        "category": [{
+            "title": "Jackets",
+            "slug": "jackets"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/alex-holyoake-571682-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/alex-holyoake-571682-unsplash-cropped.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 25,
+        "stars": 3
+    },
+    {
+        "name": "Blouse",
+        "link": "/detail-1",
+        "slug": "blouse",
+        "category": [{
+            "title": "Tops & blouses",
+            "slug": "tops-blouses"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/ao-456813-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/ao-456813-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 60,
+        "stars": 3
+    },
+    {
+        "name": "Shirt",
+        "link": "/detail-1",
+        "slug": "shirt",
+        "category": [{
+            "title": "Shirts",
+            "slug": "shirts"
+        }],
+        "img": {
+            "category": [{
+                "img": "/img/product/kyle-loftus-592041-unsplash.jpg",
+                "alt": "product"
+            }],
+            "masonry": [{
+                "img": "/img/product/kyle-loftus-592041-unsplash.jpg",
+                "alt": "product"
+            }],
+            "detail": [{
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-2.jpg",
+                    "caption": "Modern Jacket 1 - Caption text",
+                    "alt": "Modern Jacket 1"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped.jpg",
+                    "caption": "Modern Jacket 2 - Caption text",
+                    "alt": "Modern Jacket 2"
+                },
+                {
+                    "img": "/img/product/kyle-loftus-596319-unsplash-cropped-.jpg",
+                    "caption": "Modern Jacket 3 - Caption text",
+                    "alt": "Modern Jacket 3"
+                }
+            ]
+        },
+        "price": 39,
+        "stars": 3
+    }
+]

@@ -1,0 +1,190 @@
+[
+    {
+        "title": "Create A Channel",
+        "name": "create_channel",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "name",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "slug",
+                "required": true,
+                "type": "text",
+                "unique": true,
+                "rules": {
+                    "min_length": 0,
+                    "max_length": 4
+                }
+            },
+            {
+                "name": "country",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Canada", "Australlia", "USA", "Japan", "Europe", "China", "India", "Pakistan", "Sri Lanka", "Bhutan", "Nepal", "South America", "Africa", "Dubai" ]
+                }
+            },
+            {
+                "name": "currency",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["CAD", "AUD", "USD", "JPY", "EUR", "CNY", "INR", "PKR", "LKR", "NPR", "AED" ]
+                }
+            },
+            {
+                "name": "active",
+                "type": "number",
+                "rules": {
+                    "min": 0,
+                    "max": 1
+                }
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Update A Channel",
+        "name": "update_channel",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 4
+                }
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "name",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "country",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Canada", "Australlia", "USA", "Japan", "Europe", "China", "India", "Pakistan", "Sri Lanka", "Bhutan", "Nepal", "South America", "Africa", "Dubai" ]
+                }
+            },
+            {
+                "name": "currency",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["CAD", "AUD", "USD", "JPY", "EUR", "CNY", "INR", "PKR", "LKR", "NPR", "AED" ]
+                }
+            },
+            {
+                "name": "active",
+                "type": "number",
+                "rules": {
+                    "min": 0,
+                    "max": 1
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Get Active Channels",
+        "name": "get_active_channels",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "active",
+                "type": "constant",
+                "value": 1
+            }
+        ],
+        "render": {
+            "fields": {
+                "name": 1,
+                "slug": 1,
+                "country": 1,
+                "currency": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get All Channels",
+        "name": "get_all_channels",
+        "type": "READ",
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "query_validations": [
+            {
+            }
+        ],
+        "render": {
+            "fields": {
+                "name": 1,
+                "slug": 1,
+                "country": 1,
+                "currency": 1,
+                "active": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "name": "delete_channel",
+        "title": "Delete A Channel",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "slug", 
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 4
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    }
+]

@@ -1,0 +1,136 @@
+[
+    {
+        "title": "Create A Category",
+        "name": "create_category",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "slug",
+                "required": true,
+                "type": "text",
+                "unique": true,
+                "rules": {
+                    "min_length": 0,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "description",
+                "required": true,
+                "type": "object"
+
+            },
+            {
+                "name": "bg_image",
+                "type": "text"
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Update A Category",
+        "name": "update_category",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "description",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "bg_image",
+                "type": "text"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Get Categories",
+        "name": "get_categories",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "title",
+                "type": "search",
+                "rules": {
+                    "options": "i"
+                }
+            }
+        ],
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1,
+                "bg_image": 1,
+                "description": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "name": "delete_category",
+        "title": "Delete A Category",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "slug", 
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    }
+]

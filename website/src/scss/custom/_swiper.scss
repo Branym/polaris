@@ -1,0 +1,160 @@
+@use "sass:math";
+
+.swiper-thumbs {
+  display: flex;
+  margin: 0 -5px;
+  padding-top: 10px;
+}
+
+.swiper-thumb-item {
+  max-width: 100px;
+  margin: 0 5px;
+  padding: 0;
+  transition: all 0.5s;
+  opacity: 0.5;
+  border: $btn-border-width solid transparent;
+  background-color: transparent;
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+// Homepage full-screen slider
+
+.home-full-slider-wrapper {
+  min-height: 600px;
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
+}
+
+.home-full-slider,
+.home-classic-slider {
+  position: relative;
+
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    background: #fff;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: white;
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  .home-full-item {
+    position: relative;
+    padding-top: $headerHeight;
+    padding-bottom: math.div($headerHeight, 2);
+    min-height: 600px;
+    height: auto;
+  }
+  p.lead {
+    font-size: $font-size-base;
+  }
+
+  @include media-breakpoint-up(md) {
+    .home-full-item {
+      min-height: 100vh;
+    }
+    p.lead {
+      font-size: $lead-font-size;
+    }
+  }
+}
+
+// Brands slider
+.brands-slider {
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    background: #343a40;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #343a40;
+  }
+}
+
+// Circle slider
+.circle-slider {
+  height: 600px;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #343a40;
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    background: #343a40;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #343a40;
+  }
+}
+
+.circle-slider-bg {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-size: contain !important;
+  > div {
+    width: 100%;
+  }
+  @include media-breakpoint-down(md) {
+    background-position: center bottom !important;
+  }
+}
+
+// Product slider
+
+.product-slider {
+  position: relative;
+  .product-slider-item {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    background: #343a40;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #343a40;
+  }
+}
+
+// Detail slider
+
+.detail-full {
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    background: #fff;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+  }
+}

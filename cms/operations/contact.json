@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Send Mail",
+        "name": "mail",
+        "type": "MAIL",
+        "data_validations": [
+            {
+                "name": "subject",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "content",
+                "type": "list",
+                "required": true
+            },
+            {
+                "name": "from",
+                "constant": "true",
+                "value": {
+                    "email": "noreply@polarismedifabrics.com",
+                    "name": "Polaris Medifabrics"
+                }
+            },
+            {
+                "name": "personalizations",
+                "constant": "true",
+                "value": [
+                    {
+                        "to": [
+                            {
+                                "email": "support@polarismedifabrics.com",
+                                "name": "Polaris Support"
+                            },
+                            {
+                                "email": "codbrix.labs@gmail.com"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "mail": {
+            "api_key": "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"
+        },
+        "user": {
+            "must_logged_in": false,
+            "can_operate": ["admin"]
+        }
+    }
+]

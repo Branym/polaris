@@ -1,0 +1,332 @@
+[
+    {
+        "title": "Create A Profile",
+        "name": "create_profile",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "first_name",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "last_name",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "country_code",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 4
+                }
+            },
+            {
+                "name": "phone",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 10
+                }
+            },
+            {
+                "name": "company_name",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "active",
+                "type": "constant",
+                "value": 1
+            },
+            {
+                "name": "user",
+                "unique": true,
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "email",
+                "unique": true,
+                "constant": true,
+                "value": "{{user.email}}"
+            },
+            {
+                "name": "role",
+                "constant": true,
+                "value": "{{user.role}}"
+            },
+            {
+                "name": "cust_id",
+                "unique": true,
+                "constant": true,
+                "value": "POL{{date.year}}{{total}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin", "user"]
+        }
+    },
+    {
+        "title": "Edit Profile",
+        "name": "edit_profile",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "first_name",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "last_name",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "country_code",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 4
+                }
+            },
+            {
+                "name": "phone",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 10
+                }
+            },
+            {
+                "name": "company",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "country",
+                "type": "text",
+                "rules": {
+                    "options": ["Canada", "Australlia", "USA", "Japan", "Europe", "China", "India", "Pakistan", "Sri Lanka", "Bhutan", "Nepal", "South America", "Africa", "Dubai" ]
+                }
+            },
+            {
+                "name": "city",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "state",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            },
+            {
+                "name": "address_line_1",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 100
+                }
+            },
+            {
+                "name": "address_line_2",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 100
+                }
+            },
+            {
+                "name": "pincode",
+                "type": "number",
+                "rules": {
+                    "min": 10000,
+                    "max": 9999999
+                }
+            },
+            {
+                "name": "shipping",
+                "type": "object"
+            },
+            {
+                "name": "wishlist",
+                "type": "list"
+            },
+            {
+                "name": "cart_items",
+                "type": "list"
+            },
+            {
+                "name": "email",
+                "constant": true,
+                "value": "{{user.email}}"
+            },
+            {
+                "name": "for_search",
+                "constant": true,
+                "value": "{{data.first_name}} {{data.last_name}} {{user.email}}"
+            },
+            {
+                "name": "role",
+                "constant": true,
+                "value": "{{user.role}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin", "user"]
+        }
+    },
+    {
+        "title": "Get All Customers",
+        "name": "get_all",
+        "type": "READ",
+        "query_validations": [
+                {
+                    "name": "for_search",
+                    "type": "search",
+                    "rules": {
+                        "options": "i"
+                    }
+                }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "render": {
+            "fields": {
+                "first_name": 1,
+                "last_name": 1,
+                "phone": 1,
+                "country_code": 1,
+                "country": 1,
+                "email": 1,
+                "role": 1,
+                "user": 1,
+                "cust_id": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Profile",
+        "name": "get_profile",
+        "type": "READ_ONE",
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "query_validations": [
+            {
+                "name": "user",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "render": {
+            "fields": {
+                "first_name": 1,
+                "last_name": 1,
+                "phone": 1,
+                "country_code": 1,
+                "country": 1,
+                "company": 1,
+                "pincode": 1,
+                "state": 1,
+                "city": 1,
+                "address_line_1": 1,
+                "address_line_2": 1,
+                "email": 1,
+                "role": 1,
+                "shipping": 1
+            }
+        }
+    },
+    {
+        "title": "Get User Profile",
+        "name": "get_user_profile",
+        "type": "READ_ONE",
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["user", "admin"] 
+        },
+        "query_validations": [
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            }
+        ],
+        "render": {
+            "fields": {
+                "first_name": 1,
+                "last_name": 1,
+                "phone": 1,
+                "country_code": 1,
+                "country": 1,
+                "company": 1,
+                "pincode": 1,
+                "cust_id": 1,
+                "state": 1,
+                "city": 1,
+                "address_line_1": 1,
+                "address_line_2": 1,
+                "shipping": 1,
+                "cart_items": 1,
+                "user":1,
+                "email": 1,
+                "role": 1
+            }
+        }
+    }
+]

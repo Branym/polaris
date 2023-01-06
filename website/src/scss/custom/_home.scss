@@ -1,0 +1,195 @@
+/*
+* ===================================================
+*     Homepage Elements
+* ===================================================
+*/
+
+// Split-screen homepage
+
+.split-screen-column {
+  display: flex;
+  align-items: center;
+  background: center center $black no-repeat;
+  background-size: cover;
+  color: $white;
+  text-align: center;
+  height: auto;
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  h1.split-screen-heading {
+    font-size: $h1-font-size * 0.5;
+  }
+  h2.split-screen-heading {
+    font-size: $h2-font-size * 0.5;
+  }
+  h3.split-screen-heading {
+    font-size: $h3-font-size * 0.5;
+  }
+}
+
+// Parallax homepage
+
+.parallax-section {
+  padding-top: 14rem;
+  padding-bottom: 14rem;
+}
+
+// testimonial homepage
+.mySwiper {
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+  height: 110%;
+}
+
+.eachdiv {
+  padding: 4rem;
+  transform: scale(1.05);
+  width: 90%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0px 3px 35px 1px #e1e7f76b;
+  color: rgb(0, 0, 0);
+  background: #ffffff;
+}
+.swiper-slide-active .eachdiv{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.swpier-navigation-disable {
+  .swiper-button-next, .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.eachdiv{
+  transform: scale(.9);
+  opacity: .4;
+}
+
+.userdetails {
+  display: flex;
+}
+.imgbox {
+  margin-right: 1rem;
+}
+.imgbox img {
+  border-radius: 50%;
+  width: 5rem;
+  border: 0px solid #cec5c5;
+}
+.detbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.detbox p {
+  margin: 0;
+  color: hsl(0, 0%, 0%);
+}
+.detbox .name {
+  color: hsl(0, 0%, 0%);
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+  font-weight: 750;
+}
+.detbox .designation {
+  color: hsl(0, 0%, 0%);
+  opacity: 60%;
+  font-size: 1rem;
+}
+.review{
+  padding: 32px 0px !important;
+}
+.review h4 {
+  color: #000000;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 991px) {
+  .eachdiv {
+    transform: scale(0.7);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .eachdiv {
+    transform: scale(0.6);
+  }
+  .review h4 {
+    font-size: 0.8rem;
+  }
+  .detbox .name {
+    font-size: 1rem;
+  }
+  .detbox .designation {
+    font-size: 0.6rem;
+  }
+  .imgbox img {
+    width: 3rem;
+  }
+  .mySwiper {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+// logo
+
+.logo-contain {
+  object-fit: contain;
+  width: 128px;
+}
+
+
+//marquee under hero slider
+
+
+.marqueeSectionWrapper {
+  position: relative;
+  height: 50px;
+  padding: 13px 20px;
+  overflow-x: hidden;
+  background-color: #d2ef5e;
+  color: #ffffff;
+}
+
+.marqueeSectionWrapper .marqueeSection {
+  position: absolute;
+  white-space: nowrap;
+  -webkit-animation: marquee;
+  animation: marquee;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  display: flex;
+  animation-duration: 30s;
+}
+
+.marqueeSectionWrapper .marqueeSection p {
+  color: #4e4d4f;
+}
+
+@keyframes marquee {
+  0% {transform: translateX(101%);} 
+  100% {transform: translateX(-99%);}
+} 
+
+.marqueeSectionWrapper .marqueeSection .text {
+  margin: 0 30px;
+  line-height: 1.5;
+}
+
+.marqueeSectionWrapper .marqueeSection .text .check svg {
+  vertical-align: middle;
+}
+
+.marqueeSectionWrapper .marqueeSection .text .check svg path {
+  fill: #4e4d4f;
+}
+

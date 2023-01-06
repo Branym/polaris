@@ -1,0 +1,40 @@
+[{
+        "id": 0,
+        "name": "Cart",
+        "link": "/cart",
+        "prevTitle": "Back to Cart"
+    },
+    {
+        "id": 1,
+        "name": "Address",
+        "link": "/checkout-1",
+        "prevTitle": "Back to the Addresses",
+        "nav": true
+    },
+    {
+        "id": 2,
+        "name": "Delivery Method",
+        "link": "/checkout-2",
+        "prevTitle": "Back to the Delivery Method",
+        "nav": true
+    },
+    {
+        "id": 3,
+        "name": "Payment Method",
+        "link": "/checkout-3",
+        "prevTitle": "Back to the Payment Method",
+        "nav": true
+    },
+    {
+        "id": 4,
+        "name": "Order Review",
+        "link": "/checkout-4",
+        "prevTitle": "Back to the Payment Method",
+        "nav": true
+    },
+    {
+        "id": 5,
+        "name": "",
+        "link": "/checkout-5"
+    }
+]

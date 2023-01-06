@@ -1,0 +1,73 @@
+
+  
+  .ce-block__content h1 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .ce-block__content h2 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .ce-block__content h3 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .ce-block__content h4 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .ce-block__content h5 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .ce-block__content h6 {
+    color: rgb(6, 9, 35);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .actions {
+    margin-top: 25px;
+  }
+  
+  .actions button:hover {
+    background-color: #319795;
+  }
+  
+  /** Editorjs React Component */
+  .react-component {
+    background: lightblue;
+    padding: 20px;
+  }
+  
+  .react-component h3 {
+    margin-top: 0;
+  }
+  
+  .ce-toolbar__actions{
+      left: calc(100% - 48px)!important;
+  }
+
+  .codex-editor__redactor{
+      padding: 0px !important;
+  }
+
+  /* EDITORJS overwrites */
+  @media screen and (min-width: 990px) {
+    .ce-block__content,
+    .ce-toolbar__content {
+      max-width: calc(100%);
+    }
+  }
+  

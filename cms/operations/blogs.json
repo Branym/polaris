@@ -1,0 +1,316 @@
+[
+    {
+        "title": "Create A Blog",
+        "name": "create_blog",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "slug",
+                "constant": true,
+                "value": "{{total}}-{{hyphenize data.title}}"
+            },
+            {
+                "name": "content",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "cover",
+                "required": true,
+                "type": "url"
+            },
+            {
+                "name": "tags",
+                "required": true,
+                "type": "list"
+            },
+            {
+                "name": "category",
+                "required": true,
+                "type": "string",
+                "rules": {
+                    "options": ["Design", "Technology" ]
+                }
+            },
+            {
+                "name": "stage",
+                "constant": true,
+                "value": "Draft"
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["editor"] 
+        }
+    },
+    {
+        "title": "Update A Blog",
+        "name": "update_blog",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "stage",
+                "constant": true,
+                "value": {"$in":["Published", "Hidden", "Draft"]}
+            },
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "title",
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "content",
+                "type": "object"
+            },
+            {
+                "name": "cover",
+                "type": "url"
+            },
+            {
+                "name": "tags",
+                "type": "list"
+            },
+            {
+                "name": "category",
+                "type": "text",
+                "rules": {
+                    "options": ["Design", "Technology" ]
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin","editor"] 
+        }
+    },
+    {
+        "title": "Publish A Blog",
+        "name": "publish_blog",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "stage",
+                "constant": true,
+                "value":{"$in":[ "Approved", "Draft"]}
+            },
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "stage",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "options": ["Published", "Hidden" ]
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"]
+        }
+    },
+    {
+        "title": "Get Published Blogs",
+        "name": "get_published_blogs",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "stage",
+                "constant": true,
+                "value": "Published"
+            }
+        ],
+        "user": {
+            "must_logged_in": false
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "cover": 1,
+                "slug": 1,
+                "content": 0,
+                "tags": 1,
+                "category": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_at": 1
+            }
+        }
+    },
+    {
+        "title": "Get All Blogs",
+        "name": "get_all_blogs",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "stage",
+                "type": "text",
+                "rules":{
+                    "options": ["Published", "Hidden", "Draft"]
+                } 
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin","editor"] 
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "cover": 1,
+                "content": 0,
+                "tags": 1,
+                "slug": 1,
+                "category": 1,
+                "user": 1,
+                "comments": {
+                    "$slice": 3
+                }
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Blog",
+        "name": "get_one_blog",
+        "type": "READ_ONE",
+        "query_validations": [
+            {
+                "name": "stage",
+                "constant": true,
+                "value": {"$in":["Published", "Hidden", "Draft"]}
+            },
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin", "editor"] 
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "cover": 1,
+                "slug":1,
+                "content": 1,
+                "tags": 1,
+                "category": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Published Blog",
+        "name": "get_one_published_blog",
+        "type": "READ_ONE",
+        "query_validations": [
+            {
+                "name": "stage",
+                "constant": true,
+                "value": "Published"
+            },
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": false
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "cover": 1,
+                "content": 1,
+                "slug": 1,
+                "tags": 1,
+                "category": 1,
+                "comments": {
+                    "$slice": 3
+                }
+            }
+        }
+    },
+    {
+        "name": "delete_blog",
+        "title": "Delete A Blog",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "slug", 
+                "type": "text",
+                "rules": {
+                    "min_length": 3,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["editor"] 
+        }
+    }
+]

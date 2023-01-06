@@ -1,0 +1,202 @@
+[
+    {
+        "title": "Create A Page",
+        "name": "create",
+        "type": "CREATE",
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            },
+            {
+                "name": "slug",
+                "required": true,
+                "type": "text",
+                "unique": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            },
+            {
+                "name": "description",
+                "required": true,
+                "type": "object"
+            },
+            {
+                "name": "bg_image",
+                "type": "text"
+            },
+            {
+                "name": "seo_description",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 800
+                }
+            },
+            {
+                "name": "seo_title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            },
+            {
+                "name": "user",
+                "constant": true,
+                "value": "{{user.id}}"
+            },
+            {
+                "name": "created_on",
+                "constant": "true",
+                "value": "{{date.date}} {{date.month_name}} {{date.year}}"
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Update A Page",
+        "name": "update",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 20
+                }
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            },
+            {
+                "name": "description",
+                "required": true,
+                "type": "object"
+
+            },
+            {
+                "name": "bg_image",
+                "type": "text"
+            },
+            {
+                "name": "seo_description",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 800
+                }
+            },
+            {
+                "name": "seo_title",
+                "required": true,
+                "type": "text",
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    },
+    {
+        "title": "Get Pages",
+        "name": "get_all",
+        "type": "READ",
+        "query_validations": [
+            {
+                "name": "title",
+                "type": "search",
+                "rules": {
+                    "options": "i"
+                }
+            }
+        ],
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Page",
+        "name": "get_one",
+        "type": "READ_ONE",
+        "query_validations": [
+            {
+                "name": "slug",
+                "type": "text",
+                "required": true,
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 200
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": false,
+            "can_operate": ["admin", "user"] 
+        },
+        "render": {
+            "fields": {
+                "title": 1,
+                "slug": 1,
+                "bg_image": 1,
+                "seo_title": 1,
+                "seo_description": 1,
+                "description": 1,
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "name": "delete",
+        "title": "Delete A Page",
+        "type": "DELETE",
+        "query_validations": [
+            {
+                "name": "name", 
+                "type": "slug",
+                
+                "rules": {
+                    "min_length": 1,
+                    "max_length": 50
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        }
+    }
+]

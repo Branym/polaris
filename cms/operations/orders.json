@@ -1,0 +1,367 @@
+[
+    {
+        "title": "Edit Order",
+        "name": "edit",
+        "type": "UPDATE",
+        "query_validations": [
+            {
+                "name": "id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "data_validations": [
+            {
+                "name": "status",
+                "type": "text",
+                "rules": {
+                   "options": ["CANCELLED", "RETURNED" , "FULFILLED", "PENDING", "ON THE WAY", "REPLACE - ON THE WAY",  "REPLACE - FULFILLED"]
+                }
+            },
+            {
+                "name": "line_items",
+                "type": "CART_ITEMS",
+                "rules": {
+                    "product_entity": "products",
+                    "price_field": "price"
+                }
+            },
+            {
+                "name": "payment_status",
+                "type": "text",
+                "rules": {
+                   "options": ["PAID", "UNPAID", "REFUNDED"]
+                }
+            },
+            {
+                "name": "track_link",
+                "type": "url"
+            },
+            {
+                "name": "revised_items",
+                "type": "list"
+            },
+            {
+                "name": "refund_status",
+                "type": "text",
+                "rules": {
+                    "options": ["PENDING", "INITIATED", "REFUNDED"]
+                }
+            },
+            {
+                "name": "revised_total",
+                "type": "number"
+            },
+            {
+                "name": "refunded_amount",
+                "type": "number"
+            },
+            {
+                "name": "inventory_update",
+                "type": "boolean"
+            },
+            {
+                "name": "discounts",
+                "type": "entity"
+            },
+            {
+                "name": "grand_total",
+                "type": "EXPRESSION",
+                "rules": {
+                    "formula": "(line_items.total - (min(discount.maximum, (line_items.total * discount.percent / 100))))"
+                }
+            }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"]
+        }
+    },
+    {
+        "title": "Get Total Sales",
+        "name": "sales",
+        "type": "QUERY",
+        "query_validations": [
+            {
+                "name": "channel",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "pipeline": [
+            {"$match" : {"collection_name": "orders"}},
+            {"$match" : {"data.channel": "IND", "data.status": "{{query.status}}"}},
+            {"$group": {"_id": null, "sales": {"$sum": "$data.total"}}}
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"]
+        }
+    },
+    {
+        "title": "Get Count",
+        "name": "count",
+        "type": "QUERY",
+        "query_validations": [
+            {
+                "name": "channel",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "pipeline": [
+            {"$match" : {"collection_name": "orders"}},
+            {"$match" : {"data.channel": "IND", "data.status": "{{query.status}}"}},
+            {"$group": {"_id": null, "count": {"$sum": 1}}}
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"]
+        }
+    },
+    {
+        "title": "Get Count",
+        "name": "count",
+        "type": "QUERY",
+        "query_validations": [
+            {
+                "name": "channel",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "pipeline": [
+            {"$match" : {"collection_name": "orders"}},
+            {"$match" : {"data.channel": "IND", "data.status": "{{query.status}}"}},
+            {"$group": {"_id": null, "count": {"$sum": 1}}}
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"]
+        }
+    },
+    {
+        "title": "Get All Orders",
+        "name": "get_all",
+        "type": "READ",
+        "query_validations": [
+                {
+                    "name": "id",
+                    "type": "search",
+                    "rules": {
+                        "options": "i"
+                    }
+                },
+                {
+                    "name": "channel",
+                    "type": "text",
+                    "required": true
+                }, 
+                {
+                    "name": "status",
+                    "type": "text"
+                },
+                {
+                    "name": "payment_status",
+                    "constant": true,
+                    "value": {
+                        "$in": ["PAID", "UNPAID"]
+                    }
+                },
+                {
+                    "name": "payment_method",
+                    "type": "text"
+                }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "render": {
+            "fields": {
+                "order_id": 1,
+                "id": 1,
+                "total_items": 1,
+                "customer": 1,
+                "status": 1,
+                "payment_status": 1,
+                "payment_method": 1,
+                "total": 1,
+                "channel": 1,
+                "created_on": 1,
+                "count": {"$sum": 1}
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get User Orders",
+        "name": "get_user",
+        "type": "READ",
+        "query_validations": [
+                {
+                    "name": "id",
+                    "type": "search",
+                    "rules": {
+                        "options": "i"
+                    }
+                },
+                {
+                    "name": "channel",
+                    "type": "text",
+                    "required": true
+                }, 
+                {
+                    "name": "status",
+                    "type": "text"
+                },
+                {
+                    "name": "payment_method",
+                    "type": "text"
+                },
+                {
+                    "name": "payment_status",
+                    "constant": true,
+                    "value": {
+                        "$in": ["PAID", "UNPAID"]
+                    }
+                },
+                {
+                    "name": "user",
+                    "constant": true,
+                    "value": "{{user.id}}"
+                }
+        ],
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["user", "admin"] 
+        },
+        "render": {
+            "fields": {
+                "order_id": 1,
+                "id": 1,
+                "total_items": 1,
+                "customer": 1,
+                "status": 1,
+                "payment_status": 1,
+                "payment_method": 1,
+                "total": 1,
+                "channel": 1,
+                "created_on": 1
+            },
+            "limit": 10,
+            "sort": {
+                "created_on": 1
+            }
+        }
+    },
+    {
+        "title": "Get One Order",
+        "name": "get",
+        "type": "READ_ONE",
+        "user": {
+            "must_logged_in": true,
+            "can_operate": ["admin"] 
+        },
+        "query_validations": [
+            {
+                "name": "id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "render": {
+            "fields": {
+                "order_id": 1,
+                "id": 1,
+                "line_items": 1,
+                "total_items": 1,
+                "cart_items": 1,
+                "customer": 1,
+                "status": 1,
+                "payment_method": 1,
+                "track_link": 1,
+                "payment_status": 1,
+                "revised_items":1,
+                "total": 1,
+                "channel": 1,
+                "created_on": 1,
+                "billing_address": 1,
+                "shipping_address": 1,
+                "sub_total": 1,
+                "inventory_update": 1,
+                "coupon_used": 1,
+                "coupon_discount": 1,
+                "awb": 1,
+                "tax": 1,
+                "shipping_charges": 1,
+                "refunded_amount": 1,
+                "refund_status": 1,
+                "revised_total": 1
+            }
+        }
+    },
+    {
+        "title": "Get User Order",
+        "name": "user_single",
+        "type": "READ_ONE",
+        "user": {
+            "must_logged_in": false,
+            "can_operate": ["admin", "user"] 
+        },
+        "query_validations": [
+            {
+                "name": "id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "render": {
+            "fields": {
+                "order_id": 1,
+                "id": 1,
+                "line_items": 1,
+                "cart_items":1,
+                "revised_items":1,
+                "total_items": 1,
+                "customer": 1,
+                "status": 1,
+                "payment_method": 1,
+                "total": 1,
+                "track_link": 1,
+                "channel": 1,
+                "created_on": 1,
+                "billing_address": 1,
+                "shipping_address": 1,
+                "sub_total": 1,
+                "refunded_amount": 1,
+                "refund_status": 1,
+                "revised_total": 1,
+                "coupon_used": 1,
+                "payment_status": 1,
+                "coupon_discount": 1,
+                "awb": 1,
+                "tax": 1,
+                "shipping_charges": 1
+            }
+        }
+    }
+]

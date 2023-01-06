@@ -1,0 +1,12 @@
+export const VIEW_PRODUCTS = 'products';
+export const CREATE_PRODUCT = 'products/create';
+export const EDIT_PRODUCT = 'products/edit/:id';
+export const VIEW_ORDERS = 'orders';
+export const VIEW_SINGLE_ORDER = 'order/:id';
+export const VIEW_DISCOUNTS = 'discounts';
+export const VIEW_SHIPPING = 'shipping';
+export const DISCOUNT_FORM = 'discount/:id';
+export const SHIPPING_ZONE = 'shipping/:id';
+export const CATEGORIES = 'categories';
+export const CUSTOMERS = 'customers';
+export const PAGES = 'pages';

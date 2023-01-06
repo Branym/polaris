@@ -1,0 +1,15 @@
+{
+    "title": "Jackets and tops",
+    "subtitle": "Jackets and tops",
+    "breadcrumbs": [{
+            "name": "Home",
+            "link": "/"
+        },
+        {
+            "name": "Jackets and tops",
+            "active": true
+        }
+    ],
+    "content": "Id commodo velit ullamco dolore non eiusmod deserunt."
+    
+}
